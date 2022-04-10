@@ -32,7 +32,7 @@ SemesterGrades <- function(num_tests) {
   }
   my_sem_grades
 }
-SemesterGrades(3)
+SemesterGrades(6)
 
 ############################################################
 ## Question 3
@@ -46,17 +46,22 @@ avg_test <- function(num_tests=1) {
   mean(my_test)
 }
 
-avg_test(num_tests = 12)
+avg_test(num_tests = 6)
 
+## Means ranged from 79.16667 to 85.41667 and 81.25 and 84.72222
 ######################################################
-
+set.seed(1)
 myAvgTest3 <- c()
 for(i in 1:10000) {
   myAvgTest3 <- c(myAvgTest3,
                     avg_test(num_tests = 3))
 }
 summary(myAvgTest3)
+##lower minimum score, lower median and mean, higher max score but more wider standard deviation
 hist(myAvgTest3)
+## left skewed, wider range/spread
+sd(myAvgTest3)
+## sd= 6.586646
 
 ########################################################
 
@@ -66,6 +71,10 @@ for(i in 1:10000) {
                   avg_test(num_tests = 12))
 }
 summary(myAvgTest12)
+##higher min value and overall mean and median score, but lower max value, 
+##  standard deviation is a lot lower as well
 hist(myAvgTest12)
-
+## more unimodal and bell shaped
+sd(myAvgTest12)
+## sd= 1.656258
 
